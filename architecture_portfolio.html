@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO ARCH | Architecture Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            850: '#1c1917',
+                            900: '#12100e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-950 text-stone-100 font-sans antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-stone-950/80 backdrop-blur-md border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl tracking-wider font-semibold text-white">STUDIO<span class="text-amber-500">.</span>ARCH</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-stone-300">
+                <a href="#projects" class="hover:text-amber-400 transition-colors">PROJECTS</a>
+                <a href="#about" class="hover:text-amber-400 transition-colors">ABOUT</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors">SERVICES</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors">CONTACT</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-b border-stone-800 px-6 py-4 space-y-3">
+            <a href="#projects" class="block text-stone-300 hover:text-amber-400">PROJECTS</a>
+            <a href="#about" class="block text-stone-300 hover:text-amber-400">ABOUT</a>
+            <a href="#services" class="block text-stone-300 hover:text-amber-400">SERVICES</a>
+            <a href="#contact" class="block text-stone-300 hover:text-amber-400">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" alt="Architecture Background" class="w-full h-full object-cover opacity-30 scale-105 animate-pulse duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl text-center mt-12">
+            <span class="text-amber-500 font-medium tracking-widest text-xs md:text-sm uppercase mb-4 block">Contemporary Architecture & Urban Design</span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Crafting Spaces, <br><span class="italic font-normal text-stone-300">Defining Atmospheres</span>
+            </h1>
+            <p class="text-stone-400 text-base md:text-lg max-w-2xl mx-auto mb-10 font-light">
+                우리는 재밌는 건축가입니다
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-amber-500 hover:bg-amber-600 text-stone-950 font-semibold rounded-full transition-all duration-300 shadow-lg shadow-amber-500/20">
+                    프로젝트 보기
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 border border-stone-700 hover:border-stone-400 text-white font-medium rounded-full transition-all duration-300">
+                    문의하기
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+            <a href="#projects" class="text-stone-500 hover:text-stone-300"><i class="fa-solid fa-chevron-down text-lg"></i></a>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-28 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+                <span class="text-amber-500 font-medium tracking-widest text-xs uppercase mb-2 block">PORTFOLIO</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white">Featured Works</h2>
+            </div>
+            <p class="text-stone-400 text-sm max-w-md mt-4 md:mt-0 font-light">
+                주거, 상업시설, 복합문화공간에 이르기까지 정교한 스케치와 하이엔드 렌더링으로 구현된 주요 프로젝트들입니다.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Project 1 (The Coffee & Bakery Mixed-Use Building) -->
+            <div class="group relative bg-stone-900 rounded-2xl overflow-hidden border border-stone-800 hover:border-stone-700 transition-all duration-500 cursor-pointer" onclick="openModal('project1')">
+                <div class="aspect-[4/3] overflow-hidden relative">
+                    <img src="watermarked_img_3886935554294104138.png" alt="The Coffee & Bakery Building" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/800x600/1c1917/ffffff?text=Project+Render'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-amber-400 text-xs font-medium px-3 py-1 rounded-full border border-stone-700">Mixed-Use</span>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between text-xs text-stone-400 mb-2">
+                        <span>Seoul, Korea</span>
+                        <span>2026</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">The Coffee & Bakery Tower</h3>
+                    <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+                        1층 프리미엄 베이커리 카페와 상층부 모던 오피스텔이 결합된 복합 건축물. 외부 필로티 주차장과 세련된 라인조명이 어우러진 도심형 랜드마크.
+                    </p>
+                    <div class="flex items-center text-amber-400 text-sm font-medium">
+                        <span>자세히 보기</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group relative bg-stone-900 rounded-2xl overflow-hidden border border-stone-800 hover:border-stone-700 transition-all duration-500 cursor-pointer" onclick="openModal('project2')">
+                <div class="aspect-[4/3] overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="Modern Villa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-amber-400 text-xs font-medium px-3 py-1 rounded-full border border-stone-700">Residential</span>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between text-xs text-stone-400 mb-2">
+                        <span>Jeju, Korea</span>
+                        <span>2025</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">The Horizon Residence</h3>
+                    <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+                        자연의 수평선을 품은 프라이빗 주거 공간. 노출 콘크리트와 대형 통창을 통해 외부 풍경을 내부로 깊숙이 끌어들이는 미니멀리즘 건축.
+                    </p>
+                    <div class="flex items-center text-amber-400 text-sm font-medium">
+                        <span>자세히 보기</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-28 bg-stone-900/50 border-y border-stone-800/80 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-amber-500 font-medium tracking-widest text-xs uppercase mb-2 block">PHILOSOPHY</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-6">공간은 그 안에 머무는 사람의 삶을 바꿉니다.</h2>
+                <p class="text-stone-300 text-base font-light leading-relaxed mb-6">
+                    STUDIO ARCH는 건축의 구조적 아름다움과 실용적 가치의 균형을 추구합니다. 초기 스케치 단계부터 정밀한 3D 렌더링 및 디테일링까지 클라이언트의 비전을 현실로 구현합니다.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-stone-800">
+                    <div>
+                        <h4 class="font-serif text-3xl font-bold text-amber-400 mb-1">12+</h4>
+                        <p class="text-stone-400 text-sm">Years of Experience</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-3xl font-bold text-amber-400 mb-1">85+</h4>
+                        <p class="text-stone-400 text-sm">Completed Projects</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-stone-800">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=80" alt="Architecture Studio" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-stone-900 border border-stone-800 p-6 rounded-xl hidden sm:block shadow-2xl">
+                    <p class="font-serif italic text-stone-300 text-sm">"Architecture is frozen music."</p>
+                    <span class="text-xs text-amber-500 mt-2 block font-medium">— Johann Wolfgang von Goethe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-28 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-amber-500 font-medium tracking-widest text-xs uppercase mb-2 block">EXPERTISE</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Our Services</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-stone-900/60 p-8 rounded-2xl border border-stone-800 hover:border-stone-700 transition-all">
+                <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-white mb-3">건축 설계 및 기획</h3>
+                <p class="text-stone-400 text-sm font-light leading-relaxed">
+                    대지의 특성과 클라이언트의 요구사항을 반영한 창의적이고 실용적인 맞춤형 건축 디자인을 제안합니다.
+                </p>
+            </div>
+            <div class="bg-stone-900/60 p-8 rounded-2xl border border-stone-800 hover:border-stone-700 transition-all">
+                <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-white mb-3">하이엔드 3D 렌더링</h3>
+                <p class="text-stone-400 text-sm font-light leading-relaxed">
+                    실제 건물처럼 생생한 빛과 재질감을 표현하는 포토리얼리스틱 시각화 작업으로 완공 후 모습을 미리 경험할 수 있습니다.
+                </p>
+            </div>
+            <div class="bg-stone-900/60 p-8 rounded-2xl border border-stone-800 hover:border-stone-700 transition-all">
+                <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-city"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-white mb-3">인테리어 및 공간 컨설팅</h3>
+                <p class="text-stone-400 text-sm font-light leading-relaxed">
+                    상업시설, 오피스텔, 주거 공간의 내부 가구 배치와 조명 연출까지 아우르는 통합 인테리어 디자인 솔루션.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-28 bg-stone-900/50 border-t border-stone-800/80 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 font-medium tracking-widest text-xs uppercase mb-2 block">GET IN TOUCH</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4">프로젝트를 함께 시작하세요</h2>
+                <p class="text-stone-400 text-sm font-light">새로운 건축 및 디자인 의뢰에 관해 편하게 문의해 주세요.</p>
+            </div>
+
+            <form onsubmit="handleSubmit(event)" class="space-y-6 bg-stone-900 p-8 md:p-12 rounded-2xl border border-stone-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">성함 / 회사명</label>
+                        <input type="text" required class="w-full bg-stone-950 border border-stone-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">이메일 주소</label>
+                        <input type="email" required class="w-full bg-stone-950 border border-stone-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-stone-400 mb-2">문의 내용</label>
+                    <textarea rows="5" required class="w-full bg-stone-950 border border-stone-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-stone-950 font-semibold rounded-lg transition-colors shadow-lg">
+                    문의 메시지 보내기
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-stone-900 px-6 text-center text-stone-500 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="font-serif text-white text-lg tracking-wider">STUDIO<span class="text-amber-500">.</span>ARCH</span>
+            <p>&copy; 2026 STUDIO ARCH. All rights reserved.</p>
+            <div class="flex space-x-6 text-stone-400">
+                <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-behance text-lg"></i></a>
+                <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-linkedin text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-stone-950/90 backdrop-blur-md hidden items-center justify-center p-6 overflow-y-auto">
+        <div class="bg-stone-900 border border-stone-800 rounded-2xl max-w-3xl w-full p-8 relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-stone-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Dynamically populated or default content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-amber-500 text-stone-950 font-semibold px-6 py-3 rounded-xl shadow-2xl transform translate-y-32 transition-transform duration-300 z-50">
+        문의가 성공적으로 전송되었습니다!
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal(projectId) {
+            if (projectId === 'project1') {
+                modalContent.innerHTML = `
+                    <span class="text-amber-500 text-xs font-semibold uppercase tracking-wider mb-2 block">Featured Mixed-Use Project</span>
+                    <h2 class="font-serif text-3xl font-bold text-white mb-4">The Coffee & Bakery Tower</h2>
+                    <div class="aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-stone-800">
+                        <img src="watermarked_img_3886935554294104138.png" alt="Project Render" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4 text-stone-300 text-sm font-light leading-relaxed">
+                        <p><strong>위치:</strong> 서울특별시 강남구</p>
+                        <p><strong>용도:</strong> 상업시설(1층 베이커리 카페) 및 오피스텔(4~6층)</p>
+                        <p><strong>설명:</strong> 오전 10시의 따스한 자연광이 건물을 감싸며, 1층 통유리 내부에는 아늑한 베이커리 가구와 손님들의 모습이 연출되어 있습니다. 상부 주차장 천장에는 3개의 라인 조명이 세련되게 설치되어 도시적 감성을 더합니다.</p>
+                    </div>
+                `;
+            } else {
+                modalContent.innerHTML = `
+                    <span class="text-amber-500 text-xs font-semibold uppercase tracking-wider mb-2 block">Residential Project</span>
+                    <h2 class="font-serif text-3xl font-bold text-white mb-4">The Horizon Residence</h2>
+                    <div class="aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-stone-800">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="Project Render" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4 text-stone-300 text-sm font-light leading-relaxed">
+                        <p><strong>위치:</strong> 제주특별자치도 서귀포시</p>
+                        <p><strong>용도:</strong> 단독주택</p>
+                        <p><strong>설명:</strong> 바다를 향해 열린 대형 파노라마 창과 제주의 돌담, 그리고 미니멀한 건축 매스가 조화를 이루는 프라이빗 안식처입니다.</p>
+                    </div>
+                `;
+            }
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Form submission toast
+        function handleSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-32');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 3000);
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
